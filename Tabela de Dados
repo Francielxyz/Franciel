@@ -1,0 +1,65 @@
+"""Faça um programa que leia e valide as seguintes informações:
+Nome: maior que 3 caracteres;
+Idade: entre 0 e 150;
+Salário: maior que zero;
+Sexo: 'f' ou 'm';
+Estado Civil: 's', 'c', 'v', 'd';"""
+cont=0
+print("DIGITE {sair} para cancelar o programa")
+while(True):
+    nome=input("Qual é o seu nome? ")
+    if(nome=="sair"):
+        break
+    idade=int(input("Qual é a sua idade? "))
+    salario=float(input("Qual é o seu salário? "))
+    sexo=input("Qual é o seu sexo? \"f\" ou \"m\"? ")
+    relacionamento=input("Estado Civil? \'s\', \'c\', \'v\', \'d\'= ")
+    sexo=sexo.lower()
+    relacionamento=relacionamento.lower()
+    tamanho=len(nome)
+    print(" ")
+    if(tamanho<=3):
+        print("Nome Ivalido, digite novamente!")
+        cont1=0
+        while(True):
+            nome=input("Qual é o seu nome? ")
+            tamanho=len(nome)
+            if(tamanho>3):
+                break
+        cont1+=1
+    if(idade<0 or idade > 150):
+        print("Idade ivalida!")
+        cont1=0
+        while(True):
+            idade=int(input("Qual é a sua idade? "))
+            if(idade>=0 and idade<=150):
+                break
+        cont1+=1
+    if(salario<0):
+        print("Salario Invalido, digite novamente!")
+        cont1=0
+        while(True):
+            salario=float(input("Qual é o seu salário? "))
+            if(salario>=0):
+                break
+        cont1+=1
+    if(sexo != "f" and sexo!= "m"):
+        print("Sexo Ivalido")
+        cont1=0
+        while(True):
+            sexo=input("Qual é o seu sexo? \"f\" ou \"m\"? ")
+            sexo=sexo.lower()
+            if(sexo=="f" or sexo=="m"):
+                break
+        cont1+=1
+    if(relacionamento != "s" and relacionamento != "c" and relacionamento != "v" and relacionamento != "d"):
+        print("Estado Civil Incorreto!")
+        cont1=0
+        while(True):
+            relacionamento=input("Estado Civil? \'s\', \'c\', \'v\', \'d\'= ")
+            relacionamento=relacionamento.lower()
+            if(relacionamento == "s" or relacionamento == "c" or relacionamento == "v" or relacionamento == "d"):
+                break
+        cont1+=1
+    print("DADOS CORRETOS, OBRIGADO\n")
+    cont+=1
